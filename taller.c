@@ -15,10 +15,12 @@ int  main(int argc, char *argv[] ){
 	    printf("ingrese la llave numerica: ");
 	    scanf("%d",&llave);
 	    printf("\nLa frase encriptado es:\n%s\n", encriptar(cadena, llave));
+	}else if (argc<=2){
+	    printf("\nle falto un argumento \n la cantidad correcta de argumentos: 2 \n llave  n cadena \n");
+	}else if (argc<=3){
+	    printf("\nMensaje cifrado:\n%s\n", encriptar( argv[2], atoi(argv[1])));
 	}else{
-		printf("Introducir mensaje: %s", argv[2]);
-	    printf("ingrese la llave numerica: %s", argv[1]);
-	    printf("\nLa frase encriptado es:\n%s\n", encriptar( argv[2], atoi(argv[1])));
+		printf("no ingrese la cantidad correcta de argumentos: \n llave  \n cadena \n");
 	}
 	return 0;
 }
