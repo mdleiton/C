@@ -20,13 +20,20 @@ int  main(){
 char *  encriptar(char cadena[MAXIMO],int llave){
     int i=0;
     int dif;
+ 	llave=llave % 26;
     while(cadena[i]!='\0'){
 	if(cadena[i]>='A' && cadena[i]<='Z'){
 		if((dif=cadena[i]+llave-'Z')>0){
 			cadena[i]='A'+dif-1;
 		}else{
-        		cadena[i]=cadena[i]+llave;
-        	}
+        	cadena[i]+=llave;
+        }
+	}else if(cadena[i]>='a' && cadena[i]<='z'){
+		if((dif=cadena[i]+llave-'z')>0){
+			cadena[i]='a'+dif-1;
+		}else{
+        	cadena[i]+=llave;
+        }
 	}
 	i++;
     }
