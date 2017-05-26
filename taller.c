@@ -5,17 +5,22 @@
 
 char * encriptar(char nuv_fra[MAXIMO],int num);
 
-int  main(){
+int  main(int argc, char *argv[] ){
     int llave;
     char cadena[MAXIMO];
-
     printf("\t\t\t\t\tCIFRADO CICLICO:\n");
-    printf("Introducir mensaje: ");
-    fgets(cadena,100,stdin);
-    printf("ingrese la llave numerica: ");
-    scanf("%d",&llave);
-    printf("\nLa frase encriptado es:\n%s\n", encriptar(cadena, llave));
-    return 0;
+    if(argc <= 1){
+	    printf("Introducir mensaje: ");
+	    fgets(cadena,100,stdin);
+	    printf("ingrese la llave numerica: ");
+	    scanf("%d",&llave);
+	    printf("\nLa frase encriptado es:\n%s\n", encriptar(cadena, llave));
+	}else{
+		printf("Introducir mensaje: %s", argv[2]);
+	    printf("ingrese la llave numerica: %s", argv[1]);
+	    printf("\nLa frase encriptado es:\n%s\n", encriptar( argv[2], atoi(argv[1])));
+	}
+	return 0;
 }
 
 char *  encriptar(char cadena[MAXIMO],int llave){
@@ -62,3 +67,5 @@ char *  encriptar(char cadena[MAXIMO],int llave){
     }
     return cadena;  
 }
+
+
