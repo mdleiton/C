@@ -16,6 +16,7 @@ int  main(int argc, char *argv[] ){
 	    printf("ingrese la llave numerica: ");
 	    scanf("%d",&llave);
 	    printf("\nLa cadena encriptado es:\n%s\n", encriptar(cadena, llave));
+	    printf("\nMensaje cifrado en morse:\n%s\n", morse( cadena));
 	}else if (argc<=2){
 	    printf("\nle falto un argumento \n la cantidad correcta de argumentos: 2 \n llave  n cadena \n");
 	}else if (argc<=3){
@@ -155,4 +156,3 @@ char * morse(char cadena[MAXIMO]){
 
 
 }
-
