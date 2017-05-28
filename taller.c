@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #define MAXIMO 1200
-/* definicion de funciones */
+
 char * encriptar(char nuv_fra[MAXIMO],int num);
 char * morse(char cadena[MAXIMO]);
 int validarllave(char llave[MAXIMO]);
