@@ -1,4 +1,4 @@
-include "../include/cifrado.h"
+#include "../include/cifrado.h"
 
 char* cifradoCiclico(char* mensaje, int llave){
 	int i=0;
@@ -10,13 +10,13 @@ char* cifradoCiclico(char* mensaje, int llave){
 		while(mensaje[i]!='\0'){
 			if(mensaje[i]>='A' && mensaje[i]<='Z'){
 				if((dif=mensaje[i]+llave-'A')<=0){
-					mensaje[i]='Z'+dif;
+					mensaje[i]='Z'+dif+1;
 				}else{
 					mensaje[i]+=llave;
 				}
 			}else if(mensaje[i]>='a' && mensaje[i]<='z'){
 				if((dif=mensaje[i]+llave-'a')<=0){
-					mensaje[i]='z'+dif;
+					mensaje[i]='z'+dif+1;
 				}else{
 					mensaje[i]+=llave;
 				}
