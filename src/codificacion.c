@@ -1,8 +1,7 @@
-#include "../include/codificacion.h"
 
 char* claveMorse(char* mensaje){
 	int i=0;
-	char letra[strlen(mensaje)];
+	char letra[1024]="";
     while(mensaje[i]!='\0'){
 	        
 		if (mensaje[i] == 65){strncat(letra,". —    ",30);}//a

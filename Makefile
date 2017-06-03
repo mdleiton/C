@@ -1,2 +1,2 @@
-programa: taller.c
-	gcc -Wall taller.c -o taller
+programa: src/main.c
+	gcc -Wall src/main.c -o main
