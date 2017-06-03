@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "cifrado.c"
-#include "codificacion.c"
+#include "../include/cifrado.h"
+#include "../include/codificacion.h"
 #define MAXIMO 1024
 
 int validarllave(char llave[MAXIMO]);

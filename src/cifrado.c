@@ -1,4 +1,4 @@
-
+#include <string.h>
 #define MAX_ROWS 26
 #define MAX_COLS 26
 #define MAX 26

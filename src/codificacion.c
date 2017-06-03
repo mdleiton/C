@@ -1,4 +1,4 @@
-
+#include <string.h>
 char* claveMorse(char* mensaje){
 	int i=0;
 	char letra[1024]="";
