@@ -8,10 +8,10 @@ codificacion.o:
 	gcc -Wall -c  src/codificacion.c -o obj/codificacion.o 
 
 main.o:
-	gcc -Wall -c  src/main.c -o obj/main.o
+	gcc -Wall -c  -Iinclude/ src/main.c -o obj/main.o
 
 ejecutable:
-	gcc -Wall -o  bin/cifrador  obj/*.o lib/libcifrado.so
+	gcc -Wall -o  bin/cifrador  -Iinclude/ obj/*.o lib/libcifrado.so
 
 .PHONY: clean
 clean:
