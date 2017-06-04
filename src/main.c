@@ -9,6 +9,7 @@
 int validarllave(char llave[MAXIMO]);
 char validartipo(char tipo[]);
 void validarCadena(char cadena[MAXIMO]);
+char* conversionmayuscula(char *mensaje);
 int llave ;
 char llavec[MAXIMO]={0};
 char cadena[MAXIMO]={0};
@@ -45,8 +46,8 @@ int  main(int argc, char *argv[] ){
                 printf("Introducir contrasena para cifrar:");
                 scanf(" %500[^\n]",alfabetonuevo);
                 validarCadena(alfabetonuevo);
-                printf("TEXTO SIN ENCRIPTAR: \t %s \n",alfabetonuevo);
-                printf("TEXTO ENCRIPTADO: %s \n",cifradoAutollave(cadena,alfabetonuevo));
+                printf("TEXTO SIN ENCRIPTAR: \t %s \n",conversionmayuscula(cadena));
+                printf("TEXTO ENCRIPTADO: %s \n",cifradoAutollave(conversionmayuscula(cadena),conversionmayuscula(alfabetonuevo)));
 	    		break;
 	    	case 'P':
                 printf("\n\t\t\t\t\tCIFRADO CONTRASENA\n");
@@ -57,8 +58,8 @@ int  main(int argc, char *argv[] ){
                 printf("Introducir nuevo alfabeto para cifrar:");
                 scanf(" %500[^\n]",alfabetonuevo);
                 validarCadena(alfabetonuevo);
-                printf("TEXTO SIN ENCRIPTAR: \t %s \n",alfabetonuevo);
-                printf("TEXTO ENCRIPTADO: %s \n ",cifradoContrasena(cadena,alfabetonuevo));
+                printf("TEXTO SIN ENCRIPTAR: \t %s \n",conversionmayuscula(cadena));
+                printf("TEXTO ENCRIPTADO: %s \n ",cifradoContrasena(conversionmayuscula(cadena),conversionmayuscula(alfabetonuevo)));
 	    		break;
 	    }
 	}else if (argc<=3){
@@ -78,12 +79,12 @@ int  main(int argc, char *argv[] ){
                 case 'A':
                     printf("\n\t\t\t\t\tCIFRADO AUTOLLAVE\n");
                     printf("TEXTO SIN ENCRIPTAR: \t %s \n",argv[2]);
-                    printf("TEXTO ENCRIPTADO: %s \n",cifradoAutollave(argv[2],argv[1]));
+                    printf("TEXTO ENCRIPTADO: %s \n",cifradoAutollave(conversionmayuscula(argv[2]),conversionmayuscula(argv[1])));
                     break;
                 case 'P':
                     printf("\n\t\t\t\t\tCIFRADO CONTRASENA\n");
                     printf("TEXTO SIN ENCRIPTAR: \t %s \n",argv[2]);
-                    printf("TEXTO ENCRIPTADO: %s \n ",cifradoContrasena(argv[2],argv[1]));
+                    printf("TEXTO ENCRIPTADO: %s \n ",cifradoContrasena(conversionmayuscula(argv[2]),conversionmayuscula(argv[1])));
                     break;
                 }
             }
@@ -141,4 +142,15 @@ int validarllave(char llave[MAXIMO]){
     return llaveNum;
 }
 
+char* conversionmayuscula(char mensaje[MAXIMO]){
+    int i=0;
+    while(mensaje[i]!='\0'){
+        if(mensaje[i]>='a' && mensaje[i]<='z'){
+            mensaje[i]=toupper(mensaje[i]);
+        }
+        i++;
+    }
+    printf("%s",mensaje);
+    return mensaje;
+}
 

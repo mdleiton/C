@@ -1,3 +1,4 @@
+
 all: cifradolib codificacion.o main.o ejecutable
 
 cifradolib:
@@ -10,4 +11,8 @@ main.o:
 	gcc -Wall -c  src/main.c -o obj/main.o
 
 ejecutable:
-	gcc -Wall -o bin/cifrador obj/*.o lib/libcifrado.so
+	gcc -Wall -o  bin/cifrador  obj/*.o lib/libcifrado.so
+
+.PHONY: clean
+clean:
+	rm -rf obj/* bin/* lib/*
